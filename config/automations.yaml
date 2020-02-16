@@ -1,0 +1,23 @@
+- id: '1579349508168'
+  alias: Storage shed temperature outside interval
+  description: ''
+  trigger:
+  - below: '2'
+    entity_id: sensor.forradet_temperature
+    for: 00:10:00
+    platform: numeric_state
+  - above: '5'
+    entity_id: sensor.forradet_temperature
+    for: 00:10:00
+    platform: numeric_state
+  action:
+  - data:
+      message: Temp in shed is {{states('sensor.forradet_temperature')}} {{state_attr('sensor.forradet_temperature',
+        'unit_of_measurement')}}
+      target:
+      - '#logs'
+    service: notify.slack
+  - data:
+      message: Temp in shed is {{states('sensor.forradet_temperature')}} {{state_attr('sensor.forradet_temperature',
+        'unit_of_measurement')}}
+    service: notify.mobile_app_eriks_iphone
