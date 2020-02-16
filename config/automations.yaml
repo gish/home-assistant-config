@@ -6,7 +6,7 @@
     entity_id: sensor.forradet_temperature
     for: 00:10:00
     platform: numeric_state
-  - above: '5'
+  - above: '10'
     entity_id: sensor.forradet_temperature
     for: 00:10:00
     platform: numeric_state
