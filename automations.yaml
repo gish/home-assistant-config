@@ -1,5 +1,4 @@
-- id: '1579349508168'
-  alias: Storage shed temperature outside interval
+- alias: Storage shed temperature outside interval
   trigger:
   - below: '2'
     entity_id: sensor.forradet_temperature
@@ -7,7 +6,7 @@
     platform: numeric_state
   - above: '10'
     entity_id: sensor.forradet_temperature
-    for: 00:10:00
+    for: 00:10:00 
     platform: numeric_state
   action:
   - service: notify.slack
@@ -69,3 +68,19 @@
   - service: notify.mobile_app_eriks_iphone
     data:
       message: Turn off lights in common areas
+
+- alias: Turn on common lights in morning
+  trigger:
+    platform: time
+    at: "07:00:00"
+  action:
+  - service: scene.turn_on
+    entity_id: scene.common_lights_on
+
+- alias: Turn off common lights at bedtime
+  trigger:
+    platform: time
+    at: "21:00:00"
+  action:
+  - service: scene.turn_off
+    entity_id: scene.common_lights_off
