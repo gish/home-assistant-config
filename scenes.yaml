@@ -1,0 +1,6 @@
+- name: common_lights_on
+  entities:
+    switch.trappfonster: on
+- name: common_lights_off
+  entities:
+    switch.trappfonster: off
