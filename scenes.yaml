@@ -3,7 +3,6 @@
   entities:
     switch.outdoor_plug_01: on
     switch.plug_01: on
-    switch.plug_02: on
     switch.plug_03: on
     switch.plug_04: on
     switch.plug_05: on
@@ -13,7 +12,6 @@
   entities:
     switch.outdoor_plug_01: off
     switch.plug_01: off
-    switch.plug_02: off
     switch.plug_03: off
     switch.plug_04: off
     switch.plug_05: off

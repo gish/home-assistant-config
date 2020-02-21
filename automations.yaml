@@ -43,31 +43,35 @@
       message: Temp in shed is {{states('sensor.forradet_temperature')}} {{state_attr('sensor.forradet_temperature',
         'unit_of_measurement')}}
 
-- alias: Turn on lights in common areas when the sun gets dim
+- alias: Turn on lights when the sun gets dim
   trigger:
     platform: numeric_state
     entity_id: sun.sun
     value_template: "{{ state_attr('sun.sun', 'elevation') }}"
     below: 3.5
   action:
+  - service: switch.turn_on
+    entity_id: switch.plug_02
   - service: scene.turn_on
     entity_id: scene.common_lights_on
   - service: notify.mobile_app_eriks_iphone
     data:
-      message: Turn on lights in common areas
+      message: Sun is dim, turn on lights
 
-- alias: Turn off lights in common areas when the sun gets bright
+- alias: Turn off lights when the sun gets bright
   trigger:
     platform: numeric_state
     entity_id: sun.sun
     value_template: "{{ state_attr('sun.sun', 'elevation') }}"
     above: 3.5
   action:
+  - service: switch.turn_off
+    entity_id: switch.plug_02
   - service: scene.turn_on
     entity_id: scene.common_lights_off
   - service: notify.mobile_app_eriks_iphone
     data:
-      message: Turn off lights in common areas
+      message: Sun is bright, turn off lights
 
 - alias: Turn on common lights in morning
   trigger:
