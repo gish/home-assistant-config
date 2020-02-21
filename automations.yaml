@@ -1,11 +1,11 @@
 - alias: Storage shed temperature outside interval
   trigger:
   - below: '2'
-    entity_id: sensor.forradet_temperature
+    entity_id: sensor.temperaturehumidity_sensor_01
     for: 00:10:00
     platform: numeric_state
   - above: '10'
-    entity_id: sensor.forradet_temperature
+    entity_id: sensor.temperaturehumidity_sensor_01
     for: 00:10:00 
     platform: numeric_state
   action:
@@ -24,11 +24,11 @@
 - alias: Storage shed temperature inside interval
   trigger:
   - below: '10'
-    entity_id: sensor.forradet_temperature
+    entity_id: sensor.temperaturehumidity_sensor_01
     for: 00:10:00
     platform: numeric_state
   - above: '2'
-    entity_id: sensor.forradet_temperature
+    entity_id: sensor.temperaturehumidity_sensor_01
     for: 00:10:00
     platform: numeric_state
   action:
