@@ -11,13 +11,13 @@
   action:
   - service: notify.slack
     data:
-      message: Temp in shed is {{states('sensor.forradet_temperature')}} {{state_attr('sensor.forradet_temperature',
+      message: Temp in shed is {{states('sensor.temperaturehumidity_sensor_01_temperature')}} {{state_attr('sensor.temperaturehumidity_sensor_01_temperature',
         'unit_of_measurement')}}
       target:
       - '#logs'
   - service: notify.mobile_app_eriks_iphone
     data:
-      message: Temp in shed is {{states('sensor.forradet_temperature')}} {{state_attr('sensor.forradet_temperature',
+      message: Temp in shed is {{states('sensor.temperaturehumidity_sensor_01_temperature')}} {{state_attr('sensor.temperaturehumidity_sensor_01_temperature',
         'unit_of_measurement')}}
 
 
@@ -34,13 +34,13 @@
   action:
   - service: notify.slack
     data:
-      message: Temp in shed is {{states('sensor.forradet_temperature')}} {{state_attr('sensor.forradet_temperature',
+      message: Temp in shed is {{states('sensor.temperaturehumidity_sensor_01_temperature')}} {{state_attr('sensor.temperaturehumidity_sensor_01_temperature',
         'unit_of_measurement')}}
       target:
       - '#logs'
   - service: notify.mobile_app_eriks_iphone
     data:
-      message: Temp in shed is {{states('sensor.forradet_temperature')}} {{state_attr('sensor.forradet_temperature',
+      message: Temp in shed is {{states('sensor.temperaturehumidity_sensor_01_temperature')}} {{state_attr('sensor.temperaturehumidity_sensor_01_temperature',
         'unit_of_measurement')}}
 
 - alias: Turn on lights when the sun gets dim
