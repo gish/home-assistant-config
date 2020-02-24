@@ -9,17 +9,10 @@
     for: 00:10:00 
     platform: numeric_state
   action:
-  - service: notify.slack
-    data:
-      message: Temp in shed is {{states('sensor.forradet_temperature')}} {{state_attr('sensor.forradet_temperature',
-        'unit_of_measurement')}}
-      target:
-      - '#logs'
   - service: notify.mobile_app_eriks_iphone
     data:
-      message: Temp in shed is {{states('sensor.forradet_temperature')}} {{state_attr('sensor.forradet_temperature',
+      message: Temp in shed is outside interval {{states('sensor.forradet_temperature')}} {{state_attr('sensor.forradet_temperature',
         'unit_of_measurement')}}
-
 
 - alias: Storage shed temperature inside interval
   trigger:
@@ -32,16 +25,9 @@
     for: 00:10:00
     platform: numeric_state
   action:
-  - service: notify.slack
-    data:
-      message: Temp in shed is {{states('sensor.forradet_temperature')}} {{state_attr('sensor.forradet_temperature',
-        'unit_of_measurement')}}
-      target:
-      - '#logs'
   - service: notify.mobile_app_eriks_iphone
     data:
-      message: Temp in shed is {{states('sensor.forradet_temperature')}} {{state_attr('sensor.forradet_temperature',
-        'unit_of_measurement')}}
+      message: Temp in shed is restored
 
 - alias: Turn on lights when the sun gets dim
   trigger:
