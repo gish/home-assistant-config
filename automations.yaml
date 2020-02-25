@@ -72,5 +72,5 @@
     platform: time
     at: "21:00:00"
   action:
-  - service: scene.turn_off
+  - service: scene.turn_on
     entity_id: scene.common_lights_off
