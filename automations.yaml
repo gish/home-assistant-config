@@ -29,12 +29,11 @@
     data:
       message: Temp in shed is restored
 
-- alias: Turn on lights when the sun gets dim
+- alias: Turn on lights when the sun sets
   trigger:
-    platform: numeric_state
-    entity_id: sun.sun
-    value_template: "{{ state_attr('sun.sun', 'elevation') }}"
-    below: 3.5
+    platform: sun
+    event: sunset
+    offset: "-00:30:00"
   action:
   - service: switch.turn_on
     entity_id: switch.plug_02
@@ -44,12 +43,10 @@
     data:
       message: Sun is dim, turn on lights
 
-- alias: Turn off lights when the sun gets bright
+- alias: Turn off lights when the sun rises
   trigger:
-    platform: numeric_state
-    entity_id: sun.sun
-    value_template: "{{ state_attr('sun.sun', 'elevation') }}"
-    above: 3.5
+    platform: sun
+    event: sunrise
   action:
   - service: switch.turn_off
     entity_id: switch.plug_02
