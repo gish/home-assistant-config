@@ -8,6 +8,7 @@
 !*.md
 !*config
 !*.travis.yaml
+!*automations
 
 # Ignore folders.
 .storage
