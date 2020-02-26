@@ -19,5 +19,5 @@ notify:
   - name: slack
     platform: slack
     api_key: !secret slack
-    default_channel: 'Â#logs'
+    default_channel: '#logs'
     username: Home assistant
