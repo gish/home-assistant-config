@@ -1,16 +1,17 @@
-- alias: Turn on lights when the sun sets
+- alias: Turn on common lights in morning
   trigger:
-    platform: sun
-    event: sunset
-    offset: "-00:30:00"
+    platform: time
+    at: "07:00:00"
+  condition:
+    condition: state
+    entity_id: sun.sun
+    state: 'below_horizon'
   action:
-  - service: switch.turn_on
-    entity_id: switch.plug_02
   - service: scene.turn_on
     entity_id: scene.common_lights_on
   - service: notify.mobile_app_eriks_iphone
     data:
-      message: Sun is dim, turn on lights
+      message: It's morning, turn on lights
 
 - alias: Turn off lights when the sun rises
   trigger:
@@ -23,15 +24,24 @@
     entity_id: scene.common_lights_off
   - service: notify.mobile_app_eriks_iphone
     data:
-      message: Sun is bright, turn off lights
+      message: Sun has risen, turn off lights
 
-- alias: Turn on common lights in morning
+- alias: Turn on lights when the sun sets
   trigger:
-    platform: time
-    at: "07:00:00"
+    platform: sun
+    event: sunset
+    offset: "-00:30:00"
+  condition:
+    condition: time
+    before: "21:00:00"
   action:
+  - service: switch.turn_on
+    entity_id: switch.plug_02
   - service: scene.turn_on
     entity_id: scene.common_lights_on
+  - service: notify.mobile_app_eriks_iphone
+    data:
+      message: Sun has set, turn on lights
 
 - alias: Turn off common lights at bedtime
   trigger:
@@ -40,3 +50,6 @@
   action:
   - service: scene.turn_on
     entity_id: scene.common_lights_off
+  - service: notify.mobile_app_eriks_iphone
+    data:
+      message: Goodnight, turn off lights
