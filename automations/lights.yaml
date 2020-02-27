@@ -9,9 +9,6 @@
   action:
   - service: scene.turn_on
     entity_id: scene.common_lights_on
-  - service: notify.mobile_app_eriks_iphone
-    data:
-      message: It's morning, turn on lights
 
 - alias: Turn off lights when the sun rises
   trigger:
@@ -22,9 +19,6 @@
     entity_id: switch.plug_02
   - service: scene.turn_on
     entity_id: scene.common_lights_off
-  - service: notify.mobile_app_eriks_iphone
-    data:
-      message: Sun has risen, turn off lights
 
 - alias: Turn on lights when the sun sets
   trigger:
@@ -39,9 +33,6 @@
     entity_id: switch.plug_02
   - service: scene.turn_on
     entity_id: scene.common_lights_on
-  - service: notify.mobile_app_eriks_iphone
-    data:
-      message: Sun has set, turn on lights
 
 - alias: Turn off common lights at bedtime
   trigger:
@@ -50,6 +41,3 @@
   action:
   - service: scene.turn_on
     entity_id: scene.common_lights_off
-  - service: notify.mobile_app_eriks_iphone
-    data:
-      message: Goodnight, turn off lights
