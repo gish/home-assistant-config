@@ -6,7 +6,7 @@
     platform: numeric_state
   - above: '10'
     entity_id: sensor.temperaturehumidity_sensor_01_temperature
-    for: 00:10:00 
+    for: 00:10:00
     platform: numeric_state
   action:
   - service: notify.mobile_app_eriks_iphone
