@@ -1,8 +1,6 @@
 - id: '1'
   name: common_lights_on
   entities:
-    switch.outdoor_plug_01: on
-    switch.outdoor_plug_02: on
     switch.plug_01: on
     switch.plug_03: on
     switch.plug_04: on
@@ -11,9 +9,19 @@
 - id: '2'
   name: common_lights_off
   entities:
-    switch.outdoor_plug_01: off
-    switch.outdoor_plug_02: off
     switch.plug_01: off
     switch.plug_03: off
     switch.plug_04: off
     switch.plug_05: off
+
+- id: '3'
+  name: outdoor_lights_on
+  entities:
+    switch.outdoor_plug_01: on
+    switch.outdoor_plug_02: on
+
+- id: '4'
+  name: outdoor_lights_off
+  entities:
+    switch.outdoor_plug_01: off
+    switch.outdoor_plug_02: off

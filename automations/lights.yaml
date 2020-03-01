@@ -32,6 +32,8 @@
     entity_id: switch.plug_02
   - service: scene.turn_on
     entity_id: scene.common_lights_on
+  - service: scene.turn_on
+    entity_id: scene.outdoor_lights_off
 
 - alias: Turn off common lights at bedtime
   trigger:
@@ -40,3 +42,11 @@
   action:
   - service: scene.turn_on
     entity_id: scene.common_lights_off
+
+- alias: Turn off outdoor lights at late
+  trigger:
+    platform: time
+    at: "23:00:00"
+  action:
+  - service: scene.turn_on
+    entity_id: scene.outdoor_lights_off
