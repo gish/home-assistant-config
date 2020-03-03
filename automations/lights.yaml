@@ -26,7 +26,7 @@
     offset: "-00:30:00"
   condition:
     condition: time
-    before: "21:00:00"
+    before: "21:15:00"
   action:
   - service: switch.turn_on
     entity_id: switch.plug_02
