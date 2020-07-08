@@ -28,3 +28,18 @@
   - service: notify.mobile_app_eriks_iphone
     data:
       message: Temp in shed is restored
+
+- alias: Sound alarm when movement in living room and alarm activated
+  trigger:
+    platform: state
+    entity_id: binary_sensor.presence_6
+    from: 'off'
+    to: 'on'
+  condition:
+    condition: state
+    entity_id: input_boolean.alarm_activate
+    state: 'on'
+  action:
+  - service: notify.mobile_app_eriks_iphone
+    data:
+      message: Movement in living room

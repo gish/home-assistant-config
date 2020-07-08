@@ -21,3 +21,8 @@ notify:
     api_key: !secret slack
     default_channel: '#logs'
     username: Home assistant
+
+input_boolean:
+  alarm_activate:
+    name: Alarm activated
+    icon: mdi:bell
