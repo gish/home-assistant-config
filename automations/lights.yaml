@@ -6,21 +6,21 @@
     condition: sun
     before: sunrise
   action:
-  - service: scene.turn_on
-    entity_id: scene.common_lights_on
-  - service: notify.mobile_app_eriks_iphone
-    data:
-      message: Turn on lights
+    - service: scene.turn_on
+      entity_id: scene.common_lights_on
+    - service: notify.mobile_app_eriks_iphone
+      data:
+        message: Turn on lights
 
 - alias: Turn off lights when the sun rises
   trigger:
     platform: sun
     event: sunrise
   action:
-  - service: switch.turn_off
-    entity_id: switch.plug_02
-  - service: scene.turn_on
-    entity_id: scene.common_lights_off
+    - service: switch.turn_off
+      entity_id: switch.plug_02
+    - service: scene.turn_on
+      entity_id: scene.common_lights_off
 
 - alias: Turn on lights when the sun sets
   trigger:
@@ -31,29 +31,42 @@
     condition: time
     before: "21:00:00"
   action:
-  - service: switch.turn_on
-    entity_id: switch.plug_02
-  - service: switch.turn_on
-    entity_id: switch.plug_04
-  - service: scene.turn_on
-    entity_id: scene.common_lights_on
-  - service: scene.turn_on
-    entity_id: scene.outdoor_lights_on
+    - service: switch.turn_on
+      entity_id: switch.plug_02
+    - service: switch.turn_on
+      entity_id: switch.plug_04
+    - service: scene.turn_on
+      entity_id: scene.common_lights_on
+    - service: scene.turn_on
+      entity_id: scene.outdoor_lights_on
 
 - alias: Turn off lights at bedtime
   trigger:
     platform: time
     at: "21:15:00"
   action:
-  - service: switch.turn_off
-    entity_id: switch.plug_04
-  - service: scene.turn_on
-    entity_id: scene.common_lights_off
+    - service: switch.turn_off
+      entity_id: switch.plug_04
+    - service: scene.turn_on
+      entity_id: scene.common_lights_off
 
 - alias: Turn off outdoor lights at late
   trigger:
     platform: time
     at: "23:00:00"
   action:
-  - service: scene.turn_on
-    entity_id: scene.outdoor_lights_off
+    - service: scene.turn_on
+      entity_id: scene.outdoor_lights_off
+
+- alias: Turn on living room lights for early birds
+  trigger:
+    platform: state
+    entity_id: binary_sensor.presence_6
+    from: "off"
+    to: "on"
+  condition:
+    condition: sun
+    before: sunrise
+  action:
+    - service: switch.turn_on
+      entity_id: switch.plug_05
