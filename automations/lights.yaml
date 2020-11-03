@@ -1,7 +1,7 @@
 - alias: Turn on common lights in morning
   trigger:
     platform: time
-    at: "07:00:00"
+    at: "06:00:00"
   condition:
     condition: sun
     before: sunrise
@@ -43,7 +43,7 @@
 - alias: Turn off lights at bedtime
   trigger:
     platform: time
-    at: "21:15:00"
+    at: "21:00:00"
   action:
     - service: switch.turn_off
       entity_id: switch.plug_04
