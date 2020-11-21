@@ -40,7 +40,7 @@
 - alias: Turn off lights at bedtime
   trigger:
     platform: time
-    at: "21:00:00"
+    at: "21:15:00"
   action:
     - service: switch.turn_off
       entity_id: switch.plug_04
