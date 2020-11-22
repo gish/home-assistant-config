@@ -65,3 +65,5 @@
   action:
     - service: switch.turn_on
       entity_id: switch.plug_05
+    - service: switch.turn_on
+      entity_id: switch.plug_03
