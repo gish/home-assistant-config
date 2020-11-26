@@ -15,6 +15,10 @@
     event: sunrise
   action:
     - service: switch.turn_off
+      entity_id: switch.smart_plug_2
+    - service: switch.turn_off
+      entity_id: switch.smart_plug_4
+    - service: switch.turn_off
       entity_id: switch.plug_02
 
 - alias: Turn on lights when the sun sets
