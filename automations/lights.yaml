@@ -36,6 +36,8 @@
       entity_id: switch.plug_04
     - service: scene.turn_on
       entity_id: scene.common_lights_on
+    - service: switch.turn_on
+      entity_id: switch.smart_plug_6
     - service: scene.turn_on
       entity_id: scene.outdoor_lights_on
 
