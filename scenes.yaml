@@ -1,24 +1,24 @@
 - id: "1"
   name: common_lights_on
   entities:
-    switch.plug_7: on
     switch.plug_03: on
     switch.plug_05: on
     switch.smart_plug_2: on
     switch.smart_plug_3: on
     switch.smart_plug_4: on
     switch.smart_plug_5: on
+    switch.smart_plug_7: on
 
 - id: "2"
   name: common_lights_off
   entities:
-    switch.plug_7: off
     switch.plug_03: off
     switch.plug_05: off
     switch.smart_plug_2: off
     switch.smart_plug_3: off
     switch.smart_plug_4: off
     switch.smart_plug_5: off
+    switch.smart_plug_7: off
 
 - id: "3"
   name: outdoor_lights_on
