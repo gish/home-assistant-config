@@ -1,7 +1,7 @@
 - id: "1"
   name: common_lights_on
   entities:
-    switch.plug_01: on
+    switch.plug_7: on
     switch.plug_03: on
     switch.plug_05: on
     switch.smart_plug_2: on
@@ -12,7 +12,7 @@
 - id: "2"
   name: common_lights_off
   entities:
-    switch.plug_01: off
+    switch.plug_7: off
     switch.plug_03: off
     switch.plug_05: off
     switch.smart_plug_2: off
