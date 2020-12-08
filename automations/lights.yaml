@@ -66,8 +66,12 @@
     from: "off"
     to: "on"
   condition:
-    condition: sun
-    before: sunrise
+    condition: and
+    conditions:
+      - condition: time
+        after: "05:00:00"
+      - condition: sun
+        before: sunrise
   action:
     - service: scene.turn_on
       entity_id: scene.common_lights_on
