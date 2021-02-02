@@ -14,11 +14,9 @@
     platform: sun
     event: sunrise
   action:
-    - service: switch.turn_off
-      entity_id: switch.smart_plug_2
-    - service: switch.turn_off
-      entity_id: switch.smart_plug_4
-    - service: switch.turn_off
+    - service: scene.turn_on
+      entity_id: scene.common_lights_off
+    - service: scene.turn_off
       entity_id: switch.plug_02
 
 - alias: Turn on lights when the sun sets
@@ -32,8 +30,6 @@
   action:
     - service: switch.turn_on
       entity_id: switch.plug_02
-    - service: switch.turn_on
-      entity_id: switch.plug_04
     - service: scene.turn_on
       entity_id: scene.common_lights_on
     - service: switch.turn_on
