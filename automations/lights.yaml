@@ -18,6 +18,8 @@
       entity_id: scene.common_lights_off
     - service: scene.turn_off
       entity_id: switch.plug_02
+    - service: scene.turn_on
+      entity_id: outdoor_lights_off
 
 - alias: Turn on lights when the sun sets
   trigger:
@@ -46,14 +48,6 @@
       entity_id: switch.smart_plug_6
     - service: scene.turn_on
       entity_id: scene.common_lights_off
-
-- alias: Turn off outdoor lights at late
-  trigger:
-    platform: time
-    at: "23:00:00"
-  action:
-    - service: scene.turn_on
-      entity_id: scene.outdoor_lights_off
 
 - alias: Turn on living room lights for early birds
   trigger:
