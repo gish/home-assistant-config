@@ -37,13 +37,19 @@
     - service: scene.turn_on
       entity_id: scene.outdoor_lights_on
 
+- alias: Turn off Malte's lights at bedtime
+  trigger:
+    platform: time
+    at: "21:00:00"
+  action:
+    - service: switch.turn_off
+      entity_id: switch.smart_plug_6
+
 - alias: Turn off lights at bedtime
   trigger:
     platform: time
     at: "23:00:00"
   action:
-    - service: switch.turn_off
-      entity_id: switch.smart_plug_6
     - service: scene.turn_on
       entity_id: scene.common_lights_off
 
