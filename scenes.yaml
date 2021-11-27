@@ -43,3 +43,15 @@
     switch.on_off_light_8: off
     switch.on_off_light_10: off
     switch.on_off_light_11: off
+
+- id: "5"
+  name: kids_lights_on
+  entities:
+    switch.smart_plug_6: on
+    switch.plug_01: on
+
+- id: "6"
+  name: kids_lights_off
+  entities:
+    switch.smart_plug_6: off
+    switch.plug_01: off

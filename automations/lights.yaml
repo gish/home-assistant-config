@@ -14,8 +14,8 @@
     platform: sun
     event: sunrise
   action:
-    #    - service: scene.turn_on
-    #      entity_id: scene.common_lights_off
+    - service: scene.turn_on
+      entity_id: scene.common_lights_off
     - service: scene.turn_on
       entity_id: scene.outdoor_lights_off
 
@@ -38,20 +38,16 @@
     platform: time
     at: "19:00:00"
   action:
-    - service: switch.turn_on
-      entity_id: switch.smart_plug_6
-    - service: switch.turn_off
-      entity_id: switch.plug_01
+    - service: scene.turn_on
+      entity_id: scene.kids_lights_on
 
 - alias: Turn off the kids' lights at late
   trigger:
     platform: time
     at: "21:00:00"
   action:
-    - service: switch.turn_off
-      entity_id: switch.smart_plug_6
-    - service: switch.turn_off
-      entity_id: switch.plug_01
+    - service: scene.turn_on
+      entity_id: scene.kids_lights_off
 
 - alias: Turn off lights at bedtime
   trigger:
