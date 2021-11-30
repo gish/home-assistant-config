@@ -29,7 +29,7 @@
     - service: scene.turn_on
       entity_id: scene.common_lights_on
     - service: scene.turn_on
-      entity_id: scene.outdoor_light_on
+      entity_id: scene.outdoor_lights_on
 
 - alias: Turn on the kid's light at bedtime
   trigger:
