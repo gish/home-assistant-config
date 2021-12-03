@@ -8,7 +8,7 @@
     switch.smart_plug_3: on
     switch.smart_plug_4: on
     switch.smart_plug_5: on
-    switch.smart_plug_6: on
+    #    switch.smart_plug_6: on
     switch.on_off_light_9: on
     switch.on_off_light_12: on
 
