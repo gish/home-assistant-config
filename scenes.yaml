@@ -5,7 +5,6 @@
     switch.plug_05: on
     switch.plug_02: on
     switch.smart_plug_2: on
-    switch.smart_plug_3: on
     switch.smart_plug_4: on
     switch.smart_plug_5: on
     #    switch.smart_plug_6: on
@@ -19,7 +18,6 @@
     switch.plug_05: off
     switch.plug_02: off
     switch.smart_plug_2: off
-    switch.smart_plug_3: off
     switch.smart_plug_4: off
     switch.smart_plug_5: off
     switch.smart_plug_6: off
