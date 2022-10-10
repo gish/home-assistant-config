@@ -1,9 +1,9 @@
 - alias: 'Turn off idle bike charger'
-  id: 'turn-off-idle-bike-charger'
+  id: 'turn off idle bike charger'
   trigger:
     - platform: numeric_state
       entity_id: sensor.power_22
-      above: 0
+      below: 20
       for:
         hours: 0
         minutes: 0
@@ -14,5 +14,21 @@
         entity_id: switch.smart_plug_6
     - service: notify.mobile_app_erik_iphone_13_mini
       data:
-        message: "Cykelladdare"
-        title: "Avstängd"
+        message: "Bike battery charging"
+        title: "Complete"
+
+- alias: 'Dishwasher finished'
+  id: 'dishwasher finished'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.power_16
+      below: 5
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 1
+  action:
+    - service: notify.mobile_app_erik_iphone_13_mini
+      data:
+        message: "Dishwasher"
+        title: "Finished"
