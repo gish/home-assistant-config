@@ -42,11 +42,11 @@
 - id: "5"
   name: kids_lights_on
   entities:
-    switch.smart_plug_6: on
+    switch.on_off_plug_in_unit_13: on
     switch.plug_01: on
 
 - id: "6"
   name: kids_lights_off
   entities:
-    switch.smart_plug_6: off
+    switch.on_off_plug_in_unit_13: off
     switch.plug_01: off
