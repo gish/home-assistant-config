@@ -2,17 +2,7 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.power_22
-      value_template: '{{ default(0)|int }}'
-      below: 500
-      for:
-        minutes: 3
-  condition:
-    - condition: state
-      entity_id: switch.smart_plug_6
-      state: 'on'
-      for:
-        minutes: 3
+      below: '20'
   action:
-      # Turn it off
     - service: switch.turn_off
       entity_id: switch.smart_plug_6
