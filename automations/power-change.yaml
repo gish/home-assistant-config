@@ -4,18 +4,14 @@
     - platform: numeric_state
       entity_id: sensor.power_22
       below: 20
-      for:
-        hours: 0
-        minutes: 0
-        seconds: 1
   action:
     - service: switch.turn_off
       target:
         entity_id: switch.smart_plug_6
     - service: notify.mobile_app_erik_iphone_13_mini
       data:
-        message: "Bike battery charging"
-        title: "Complete"
+        title: "Bike battery"
+        message: "Charged"
 
 - alias: 'Dishwasher finished'
   id: 'dishwasher finished'
@@ -23,12 +19,8 @@
     - platform: numeric_state
       entity_id: sensor.power_16
       below: 5
-      for:
-        hours: 0
-        minutes: 0
-        seconds: 1
   action:
     - service: notify.mobile_app_erik_iphone_13_mini
       data:
-        message: "Dishwasher"
-        title: "Finished"
+        title: "Dishwasher"
+        message: "Finished"
