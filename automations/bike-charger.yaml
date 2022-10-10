@@ -5,4 +5,5 @@
       below: '20'
   action:
     - service: switch.turn_off
-      entity_id: switch.smart_plug_6
+      target:
+        entity_id: switch.smart_plug_6
