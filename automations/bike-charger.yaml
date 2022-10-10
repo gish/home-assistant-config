@@ -2,7 +2,7 @@ automation:
   - alias: 'Turn off idle bike charger'
     trigger:
       - platform: numeric_state
-        entity_id: sensor.consumption_21
+        entity_id: sensor.power_22
         value_template: '{{ default(0)|int }}'
         below: 500
         for:
