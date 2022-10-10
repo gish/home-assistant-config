@@ -1,4 +1,5 @@
 - alias: 'Turn off idle bike charger'
+  id: 'turn-off-idle-bike-charger'
   trigger:
     - platform: numeric_state
       entity_id: sensor.power_22
