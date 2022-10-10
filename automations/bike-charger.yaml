@@ -2,8 +2,9 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.power_22
-      below: '800'
+      below: 800
   action:
     - service: switch.turn_off
       target:
         entity_id: switch.smart_plug_6
+
