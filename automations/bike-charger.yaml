@@ -1,9 +1,8 @@
 - alias: 'Turn off idle bike charger'
   trigger:
     - platform: numeric_state
-      value_template: '{{ state.attributes.power|default(0)|int }}'
       entity_id: sensor.power_22
-      below: 10
+      below: '800'
   action:
     - service: switch.turn_off
       target:
