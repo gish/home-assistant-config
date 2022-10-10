@@ -3,7 +3,7 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.power_22
-      below: 800
+      above: 0
       for:
         hours: 0
         minutes: 0
@@ -14,5 +14,5 @@
         entity_id: switch.smart_plug_6
     - service: notify.mobile_app_erik_iphone_13_mini
       data:
-        message: "Your message goes here"
-        title: "Custom subject"
+        message: "Cykelladdare"
+        title: "Avstängd"
