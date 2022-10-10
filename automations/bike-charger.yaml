@@ -4,6 +4,10 @@
     - platform: numeric_state
       entity_id: sensor.power_22
       below: 800
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 1
   action:
     - service: switch.turn_off
       target:
