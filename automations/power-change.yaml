@@ -21,7 +21,7 @@
       below: 30
       for:
         hours: 0
-        minutes: 22
+        minutes: 15
         seconds: 0
   action:
     - service: notify.mobile_app_erik_iphone_13_mini
