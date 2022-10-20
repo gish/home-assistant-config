@@ -44,7 +44,7 @@
     - platform: input_boolean
       entity_id: dishwasher_started
       to: 'on'
-  action
+  action:
     - service: notify.mobile_app_erik_iphone_13_mini
       data:
         title: "Dishwasher"
@@ -56,7 +56,7 @@
     - platform: input_boolean
       entity_id: dishwasher_finished
       to: 'on'
-  action
+  action:
     - service: notify.mobile_app_erik_iphone_13_mini
       data:
         title: "Dishwasher"
