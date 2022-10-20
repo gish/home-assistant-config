@@ -13,37 +13,4 @@
         title: "Bike battery"
         message: "Charged"
 
-- alias: 'Dishwasher running'
-  id: 'dishwasher running'
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.power_16
-      above: 20000
-      for:
-        hours: 0
-        minutes: 15
-        seconds: 0
-  action:
-    - service: input_boolean.turn_on
-      data:
-          entity_id: dishwasher_running
-    - service: notify.mobile_app_erik_iphone_13_mini
-      data:
-        title: "Dishwasher"
-        message: "Running"
 
-- alias: 'Dishwasher finished'
-  id: 'dishwasher finished'
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.power_16
-      below: 30
-      for:
-        hours: 0
-        minutes: 15
-        seconds: 0
-  action:
-    - service: notify.mobile_app_erik_iphone_13_mini
-      data:
-        title: "Dishwasher"
-        message: "Finished"

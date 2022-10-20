@@ -28,6 +28,11 @@ input_boolean:
     icon: mdi:bell
 
 input_boolean:
-  dishwasher_running:
-    name: Dishwasher is running
+  dishwasher_finished:
+    name: Dishwasher is finished
+    icon: mdi:dishwasher
+
+input_boolean:
+  dishwasher_started:
+    name: Dishwasher is started
     icon: mdi:dishwasher
