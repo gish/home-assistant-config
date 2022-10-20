@@ -26,3 +26,8 @@ input_boolean:
   alarm_activate:
     name: Alarm activated
     icon: mdi:bell
+
+input_boolean:
+  dishwasher_running:
+    name: Dishwasher is running
+    icon: mdi:dishwasher
