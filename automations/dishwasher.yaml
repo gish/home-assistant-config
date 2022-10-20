@@ -10,10 +10,10 @@
       state: 'off'
   action:
     - service: input_boolean.turn_on
-      data:
+      target:
         entity_id: dishwasher_started
     - service: input_boolean.turn_off
-      data:
+      target:
         entity_id: dishwasher_finished
 
 - alias: 'Dishwasher finished state'
@@ -32,10 +32,10 @@
       state: 'off'
   action:
     - service: input_boolean.turn_on
-      data:
+      target:
         entity_id: dishwasher_finished
     - service: input_boolean.turn_off
-      data:
+      target:
         entity_id: dishwasher_started
 
 - alias: 'Notify when dishwasher started'
@@ -46,7 +46,7 @@
       to: 'on'
   action:
     - service: notify.mobile_app_erik_iphone_13_mini
-      data:
+      target:
         title: "Dishwasher"
         message: "Started"
 
@@ -58,6 +58,6 @@
       to: 'on'
   action:
     - service: notify.mobile_app_erik_iphone_13_mini
-      data:
+      target:
         title: "Dishwasher"
         message: "Finished"
