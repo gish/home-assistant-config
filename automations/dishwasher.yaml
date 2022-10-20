@@ -36,12 +36,12 @@
         entity_id: input_boolean.dishwasher_finished
     - service: input_boolean.turn_off
       target:
-        entity_id: input.boolean_dishwasher_started
+        entity_id: input_boolean.dishwasher_started
 
 - alias: 'Notify when dishwasher started'
   id: 'notify when dishwasher started'
   trigger:
-    - platform: input_boolean
+    - platform: state
       entity_id: input_boolean.dishwasher_started
       to: 'on'
   action:
@@ -53,7 +53,7 @@
 - alias: 'Notify when dishwasher finished'
   id: 'notify when dishwasher finished'
   trigger:
-    - platform: input_boolean
+    - platform: state
       entity_id: input_boolean.dishwasher_finished
       to: 'on'
   action:
