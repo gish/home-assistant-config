@@ -6,15 +6,15 @@
       above: 2000
   condition:
     - condition: state
-      entity_id: dishwasher_started
+      entity_id: input_boolean.dishwasher_started
       state: 'off'
   action:
     - service: input_boolean.turn_on
       target:
-        entity_id: dishwasher_started
+        entity_id: input_boolean.dishwasher_started
     - service: input_boolean.turn_off
       target:
-        entity_id: dishwasher_finished
+        entity_id: input_boolean.dishwasher_finished
 
 - alias: 'Dishwasher finished state'
   id: 'dishwasher finished state'
@@ -28,25 +28,25 @@
         seconds: 0
   condition:
     - condition: state
-      entity_id: dishwasher_finished
+      entity_id: input_boolean.dishwasher_finished
       state: 'off'
   action:
     - service: input_boolean.turn_on
       target:
-        entity_id: dishwasher_finished
+        entity_id: input_boolean.dishwasher_finished
     - service: input_boolean.turn_off
       target:
-        entity_id: dishwasher_started
+        entity_id: input.boolean_dishwasher_started
 
 - alias: 'Notify when dishwasher started'
   id: 'notify when dishwasher started'
   trigger:
     - platform: input_boolean
-      entity_id: dishwasher_started
+      entity_id: input_boolean.dishwasher_started
       to: 'on'
   action:
     - service: notify.mobile_app_erik_iphone_13_mini
-      target:
+      data:
         title: "Dishwasher"
         message: "Started"
 
@@ -54,10 +54,10 @@
   id: 'notify when dishwasher finished'
   trigger:
     - platform: input_boolean
-      entity_id: dishwasher_finished
+      entity_id: input_boolean.dishwasher_finished
       to: 'on'
   action:
     - service: notify.mobile_app_erik_iphone_13_mini
-      target:
+      data:
         title: "Dishwasher"
         message: "Finished"
