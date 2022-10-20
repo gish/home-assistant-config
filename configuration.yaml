@@ -23,16 +23,12 @@ notify:
     username: Home assistant
 
 input_boolean:
-  alarm_activate:
-    name: Alarm activated
-    icon: mdi:bell
-
-input_boolean:
-  dishwasher_finished:
-    name: Dishwasher is finished
-    icon: mdi:dishwasher
-
-input_boolean:
-  dishwasher_started:
-    name: Dishwasher is started
-    icon: mdi:dishwasher
+  - alarm_activate:
+      name: Alarm activated
+      icon: mdi:bell
+  - dishwasher_finished:
+      name: Dishwasher is finished
+      icon: mdi:dishwasher
+  - dishwasher_started:
+      name: Dishwasher is started
+      icon: mdi:dishwasher
