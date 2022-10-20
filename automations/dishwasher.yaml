@@ -11,10 +11,10 @@
   action:
     - service: input_boolean.turn_on
       data:
-          entity_id: dishwasher_started
+        entity_id: dishwasher_started
     - service: input_boolean.turn_off
       data:
-          entity_id: dishwasher_finished
+        entity_id: dishwasher_finished
 
 - alias: 'Dishwasher finished state'
   id: 'dishwasher finished state'
@@ -33,10 +33,10 @@
   action:
     - service: input_boolean.turn_on
       data:
-          entity_id: dishwasher_finished
+        entity_id: dishwasher_finished
     - service: input_boolean.turn_off
       data:
-          entity_id: dishwasher_started
+        entity_id: dishwasher_started
 
 - alias: 'Notify when dishwasher started'
   id: 'notify when dishwasher started'
