@@ -57,20 +57,9 @@
       entity_id: input_boolean.dishwasher_running
       to: 'off'
   action:
-    - service: notify.mobile_app_erik_iphone_13_mini
-      data:
-        title: "Dishwasher"
-        message: "Finished"
-- alias: 'Notify when dishwasher finished'
-  id: 'notify when dishwasher finished'
-  trigger:
-    - platform: state
-      entity_id: input_boolean.dishwasher_running
-      to: 'off'
-  action:
     - service: media_player.volume_set
       data:
-        volume_level: 0.6
+        volume_level: 0.3
       target:
         entity_id: media_player.family_room
     - service: tts.google_translate_say
@@ -78,3 +67,7 @@
         entity_id: media_player.family_room
         language: sv
         message: Diskmaskinen är klar.
+    - service: notify.mobile_app_erik_iphone_13_mini
+      data:
+        title: "Dishwasher"
+        message: "Finished"
