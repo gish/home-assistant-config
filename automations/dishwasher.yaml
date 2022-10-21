@@ -1,3 +1,6 @@
+###############################################################################
+## States
+###############################################################################
 - alias: 'Dishwasher running state'
   id: 'dishwasher running state'
   trigger:
@@ -32,6 +35,9 @@
       target:
         entity_id: input_boolean.dishwasher_running
 
+###############################################################################
+## Actions
+###############################################################################
 - alias: 'Notify when dishwasher started'
   id: 'notify when dishwasher started'
   trigger:
