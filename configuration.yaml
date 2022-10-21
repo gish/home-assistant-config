@@ -15,13 +15,6 @@ automation: !include_dir_merge_list automations
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
-notify:
-  - name: slack
-    platform: slack
-    api_key: !secret slack
-    default_channel: '#logs'
-    username: Home assistant
-
 input_boolean:
   alarm_activate:
     name: Alarm activated
