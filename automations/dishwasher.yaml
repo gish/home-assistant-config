@@ -1,4 +1,4 @@
-- alias: 'Dishwasher runnng state'
+- alias: 'Dishwasher running state'
   id: 'dishwasher running state'
   trigger:
     - platform: numeric_state
