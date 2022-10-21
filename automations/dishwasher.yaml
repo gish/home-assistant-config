@@ -28,8 +28,8 @@
         seconds: 0
   condition:
     - condition: state
-      entity_id: input_boolean.dishwasher_finished
-      state: 'off'
+      entity_id: input_boolean.dishwasher_running
+      state: 'on'
   action:
     - service: input_boolean.turn_off
       target:
