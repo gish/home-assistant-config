@@ -1,0 +1,62 @@
+- alias: 'Bike charger charging state'
+  id: 'bike charger charging state'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.power_22
+      above: 100
+  action:
+    - service: input_boolean.turn_on
+      target:
+        entity_id: input_boolean.bike_battery_charging
+
+- alias: 'Bike charger complete state'
+  id: 'bike charger complete state'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.power_22
+      below: 20
+  action:
+    - service: input_boolean.turn_off
+      target:
+        entity_id: input_boolean.bike_battery_charging
+
+- alias: 'Notify when bike charger charging'
+  id: 'notify when bike charger complete'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.bike_battery_charging
+      to: 'on'
+  action:
+    - service: notify.mobile_app_erik_iphone_13_mini
+      data:
+        title: "Bike battery"
+        message: "Charging"
+
+- alias: 'Turn off bike charger when complete'
+  id: 'turn off bike charger when complete'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.bike_battery_charging
+      to: 'off'
+  action:
+    - service: switch.turn_off
+      target:
+        entity_id: switch.smart_plug_6
+    - service: notify.mobile_app_erik_iphone_13_mini
+      data:
+        title: "Bike battery"
+        message: "Charged"
+
+- alias: 'Notify when bike charger complete'
+  id: 'notify when bike charger complete'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.bike_battery_charging
+      to: 'off'
+  action:
+    - service: notify.mobile_app_erik_iphone_13_mini
+      data:
+        title: "Bike battery"
+        message: "Charged"
+
+

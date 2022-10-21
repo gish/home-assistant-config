@@ -29,3 +29,6 @@ input_boolean:
   dishwasher_running:
     name: Dishwasher is running
     icon: mdi:dishwasher
+  bike_battery_charging:
+    name: Bike battery is charging
+    icon: mdi:bicycle-electric
