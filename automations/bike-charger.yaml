@@ -21,7 +21,7 @@
         entity_id: input_boolean.bike_battery_charging
 
 - alias: 'Notify when bike charger charging'
-  id: 'notify when bike charger complete'
+  id: 'notify when bike charger charging'
   trigger:
     - platform: state
       entity_id: input_boolean.bike_battery_charging
