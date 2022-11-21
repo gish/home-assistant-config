@@ -25,3 +25,7 @@ input_boolean:
   bike_battery_charging:
     name: Bike battery is charging
     icon: mdi:bicycle-electric
+  fridge_on:
+    name: Fridge is on
+    icon: mdi:fridge
+
