@@ -8,6 +8,8 @@
     switch.smart_plug_4: on
     switch.on_off_light_9: on
     switch.on_off_light_12: on
+    switch.on_off_plug_in_unit_16: on
+    switch.on_off_plug_in_unit_17: on
 
 - id: "2"
   name: common_lights_off
@@ -20,6 +22,8 @@
     switch.on_off_light_9: off
     switch.on_off_light_12: off
     switch.on_off_plug_in_unit_13: off
+    switch.on_off_plug_in_unit_16: off
+    switch.on_off_plug_in_unit_17: off
 
 - id: "3"
   name: outdoor_lights_on
