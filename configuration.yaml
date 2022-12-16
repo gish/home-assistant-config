@@ -28,4 +28,6 @@ input_boolean:
   fridge_on:
     name: Fridge is on
     icon: mdi:fridge
+  storage_temperature_too_low:
+    name: Storage temperature too low
 
