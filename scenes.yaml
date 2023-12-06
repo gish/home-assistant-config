@@ -3,27 +3,26 @@
   entities:
     switch.plug_03: on
     switch.plug_05: on
-    switch.plug_02: on
     switch.smart_plug_2: on
     switch.smart_plug_4: on
     switch.on_off_light_9: on
     switch.on_off_light_12: on
     switch.on_off_plug_in_unit_16: on
     switch.on_off_plug_in_unit_17: on
+    switch.master_bedroom: on
 
 - id: "2"
   name: common_lights_off
   entities:
     switch.plug_03: off
     switch.plug_05: off
-    switch.plug_02: off
     switch.smart_plug_2: off
     switch.smart_plug_4: off
     switch.on_off_light_9: off
     switch.on_off_light_12: off
-    switch.on_off_plug_in_unit_13: off
     switch.on_off_plug_in_unit_16: off
     switch.on_off_plug_in_unit_17: off
+    switch.master_bedroom: off
 
 - id: "3"
   name: outdoor_lights_on
@@ -47,10 +46,10 @@
   name: kids_lights_on
   entities:
     switch.on_off_plug_in_unit_13: on
-    switch.plug_01: on
+    switch.lovas_room: on
 
 - id: "6"
   name: kids_lights_off
   entities:
     switch.on_off_plug_in_unit_13: off
-    switch.plug_01: off
+    switch.lovas_room: off

@@ -36,7 +36,7 @@
 - alias: Turn on the kids' lights at bedtime
   trigger:
     platform: time
-    at: "18:30:00"
+    at: "17:00:00"
   condition:
     condition: state
     entity_id: sun.sun
@@ -60,20 +60,3 @@
   action:
     - service: scene.turn_on
       entity_id: scene.common_lights_off
-
-- alias: Turn on living room lights for early birds
-  trigger:
-    platform: state
-    entity_id: binary_sensor.presence_6
-    from: "off"
-    to: "on"
-  condition:
-    condition: and
-    conditions:
-      - condition: time
-        after: "05:00:00"
-      - condition: sun
-        before: sunrise
-  action:
-    - service: scene.turn_on
-      entity_id: scene.common_lights_on
