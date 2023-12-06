@@ -16,18 +16,9 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 
 input_boolean:
-  alarm_activate:
-    name: Alarm activated
-    icon: mdi:bell
-  dishwasher_running:
-    name: Dishwasher is running
-    icon: mdi:dishwasher
   bike_battery_charging:
     name: Bike battery is charging
     icon: mdi:bicycle-electric
-  fridge_on:
-    name: Fridge is on
-    icon: mdi:fridge
   storage_temperature_too_low:
     name: Storage temperature too low
 
