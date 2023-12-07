@@ -46,10 +46,10 @@
   name: kids_lights_on
   entities:
     switch.on_off_plug_in_unit_13: on
-    switch.lovas_room: on
+    switch.lova_room: on
 
 - id: "6"
   name: kids_lights_off
   entities:
     switch.on_off_plug_in_unit_13: off
-    switch.lovas_room: off
+    switch.lova_room: off
