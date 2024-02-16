@@ -55,9 +55,8 @@
 - alias: Turn on staircase in morning
   trigger:
     platform: time
-    offset: "19:48:00"
+    at: "19:54:00"
   action:
     - service: switch.turn_on
       target:
         entity_id: switch.on_off_light_12
-
