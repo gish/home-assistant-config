@@ -27,20 +27,20 @@
 - id: "3"
   name: outdoor_lights_on
   entities:
-    switch.outdoor_plug_01: on
     switch.outdoor_plug_02: on
     switch.on_off_light_8: on
     switch.on_off_light_10: on
     switch.on_off_light_11: on
+    switch.balcony: on
 
 - id: "4"
   name: outdoor_lights_off
   entities:
-    switch.outdoor_plug_01: off
     switch.outdoor_plug_02: off
     switch.on_off_light_8: off
     switch.on_off_light_10: off
     switch.on_off_light_11: off
+    switch.balcony: off
 
 - id: "5"
   name: kids_lights_on
