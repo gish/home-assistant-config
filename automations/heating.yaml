@@ -12,7 +12,7 @@
       data:
         title: "Heat pump"
         message: "To level 5"
-    - service: set_fan_mode
+    - service: climate.set_fan_mode
       data:
         fan_mode: '5'
         entity_id: 'climate.luftvarmepump'
@@ -28,7 +28,7 @@
       data:
         title: "Heat pump"
         message: "To level auto"
-    - service: set_fan_mode
+    - service: climate.set_fan_mode
       data:
         fan_mode: 'auto'
         entity_id: 'climate.luftvarmepump'
