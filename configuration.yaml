@@ -21,4 +21,6 @@ input_boolean:
     icon: mdi:bicycle-electric
   storage_temperature_too_low:
     name: Storage temperature too low
+  office_hours_active:
+    name: Time of day is office hours
 

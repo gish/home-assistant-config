@@ -1,0 +1,35 @@
+###############################################################################
+## Actions
+###############################################################################
+- alias: 'Increase heat pump fan speed during office hours'
+  id: 'increase heat pump fan speed during office hours'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.office_hours_active
+      to: 'on'
+  action:
+    - service: notify.mobile_app_erik_iphone_13_mini
+      data:
+        title: "Heat pump"
+        message: "To level 5"
+    - service: set_fan_mode
+      data:
+        fan_mode: '5'
+        entity_id: 'climate.luftvarmepump'
+
+- alias: 'Decrease heat pump fan speed outside office hours'
+  id: 'decrease heat pump fan speed outside office hours'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.office_hours_active
+      to: 'off'
+  action:
+    - service: notify.mobile_app_erik_iphone_13_mini
+      data:
+        title: "Heat pump"
+        message: "To level auto"
+    - service: set_fan_mode
+      data:
+        fan_mode: 'auto'
+        entity_id: 'climate.luftvarmepump'
+
