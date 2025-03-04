@@ -8,10 +8,6 @@
       entity_id: input_boolean.office_hours_active
       to: 'on'
   action:
-    - service: notify.mobile_app_erik_iphone_13_mini
-      data:
-        title: "Heat pump"
-        message: "To level 5"
     - service: climate.set_fan_mode
       data:
         fan_mode: '5'
@@ -23,11 +19,6 @@
     - platform: state
       entity_id: input_boolean.office_hours_active
       to: 'off'
-  action:
-    - service: notify.mobile_app_erik_iphone_13_mini
-      data:
-        title: "Heat pump"
-        message: "To level auto"
     - service: climate.set_fan_mode
       data:
         fan_mode: 'auto'
