@@ -19,6 +19,7 @@
     - platform: state
       entity_id: input_boolean.office_hours_active
       to: 'off'
+  action:
     - service: climate.set_fan_mode
       data:
         fan_mode: 'auto'
