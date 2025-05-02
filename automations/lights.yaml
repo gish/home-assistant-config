@@ -26,6 +26,20 @@
     offset: "-00:30:00"
   condition:
     condition: time
+    before: "22:00:00"
+  action:
+    - service: scene.turn_on
+      entity_id: scene.common_lights_on
+    - service: scene.turn_on
+      entity_id: scene.outdoor_lights_on
+
+- alias: Turn on kids light when the sun sets
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-00:30:00"
+  condition:
+    condition: time
     before: "20:00:00"
   action:
     - service: scene.turn_on
@@ -50,7 +64,6 @@
   action:
     - service: scene.turn_on
       entity_id: scene.common_lights_off
-
 
 - alias: Turn on staircase in morning
   trigger:
