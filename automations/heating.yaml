@@ -7,6 +7,10 @@
     - platform: state
       entity_id: input_boolean.office_hours_active
       to: 'on'
+  condition:
+    - condition: state
+      entity_id: climate.luftvarmepump
+      state: 'heat'
   action:
     - service: climate.set_fan_mode
       data:
@@ -19,6 +23,10 @@
     - platform: state
       entity_id: input_boolean.office_hours_active
       to: 'off'
+  condition:
+    - condition: state
+      entity_id: climate.luftvarmepump
+      state: 'heat'
   action:
     - service: climate.set_fan_mode
       data:
