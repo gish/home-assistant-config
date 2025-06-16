@@ -26,7 +26,7 @@
     offset: "-00:30:00"
   condition:
     condition: time
-    before: "22:00:00"
+    before: "21:00:00"
   action:
     - service: scene.turn_on
       entity_id: scene.common_lights_on
