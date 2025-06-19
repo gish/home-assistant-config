@@ -7,7 +7,7 @@
     - platform: state
       entity_id: input_boolean.night_time_active
       to: 'on'
-   action:
+  action:
     - service: switch.turn_on
       target:
         entity_id: switch.garage_door
