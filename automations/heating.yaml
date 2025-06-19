@@ -38,6 +38,6 @@
         entity_id: 'climate.luftvarmepump'
     - service: climate.set_swing_mode
       data:
-        swing_mode: 'auto'
+        swing_mode: '1_up'
         entity_id: 'climate.luftvarmepump'
 
