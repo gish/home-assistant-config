@@ -16,7 +16,7 @@
   id: 'turn off pool pump when not night time'
   trigger:
     - platform: state
-      entity_id: input_boolean.night_time_active
+       entity_id: input_boolean.night_time_active
       to: 'off'
   action:
     - service: switch.turn_off
