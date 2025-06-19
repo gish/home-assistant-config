@@ -1,0 +1,25 @@
+###############################################################################
+## Actions
+###############################################################################
+- alias: 'Turn on pool pump when night time'
+  id: 'turn on pool pump when night time'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.night_time_active
+      to: 'on'
+   action:
+    - service: switch.turn_on
+      target:
+        entity_id: switch.garage_door
+
+- alias: 'Turn off pool pump when not night time'
+  id: 'turn off pool pump when not night time'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.office_hours_active
+      to: 'off'
+  action:
+    - service: switch.turn_off
+      target:
+        entity_id: switch.garage_door
+

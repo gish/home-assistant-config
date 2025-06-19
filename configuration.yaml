@@ -23,4 +23,6 @@ input_boolean:
     name: Storage temperature too low
   office_hours_active:
     name: Time of day is office hours
+  night_time_active:
+    name: Time of day is night time
 
