@@ -10,11 +10,15 @@
   condition:
     - condition: state
       entity_id: climate.luftvarmepump
-      state: 'heat'
+      state: 'cool'
   action:
     - service: climate.set_fan_mode
       data:
         fan_mode: '5'
+        entity_id: 'climate.luftvarmepump'
+    - service: climate.set_swing_mode
+      data:
+        swing_mode: '5_down'
         entity_id: 'climate.luftvarmepump'
 
 - alias: 'Decrease heat pump fan speed outside office hours'
@@ -26,10 +30,14 @@
   condition:
     - condition: state
       entity_id: climate.luftvarmepump
-      state: 'heat'
+      state: 'cool'
   action:
     - service: climate.set_fan_mode
       data:
         fan_mode: 'auto'
+        entity_id: 'climate.luftvarmepump'
+    - service: climate.set_swing_mode
+      data:
+        swing_mode: 'auto'
         entity_id: 'climate.luftvarmepump'
 
