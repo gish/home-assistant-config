@@ -4,13 +4,18 @@
 - alias: 'Increase heat pump fan speed during office hours'
   id: 'increase heat pump fan speed during office hours'
   trigger:
-    - platform: state
-      entity_id: input_boolean.office_hours_active
-      to: 'on'
+    - platform: time_pattern
+      minutes: /15
   condition:
+    - condition: state
+      entity_id: input_boolean.office_hours_active
+      state: 'on'
     - condition: state
       entity_id: climate.luftvarmepump
       state: 'cool'
+    - condition:
+      entity_id: weather.smhi_home
+      state: 'sunny'
   action:
     - service: climate.set_fan_mode
       data:
