@@ -5,7 +5,7 @@
   id: 'increase heat pump fan speed during office hours'
   trigger:
     - platform: time_pattern
-      minutes: /15
+      minutes: "/15"
   condition:
     - condition: state
       entity_id: input_boolean.office_hours_active
