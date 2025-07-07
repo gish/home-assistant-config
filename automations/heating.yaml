@@ -13,9 +13,9 @@
     - condition: state
       entity_id: climate.luftvarmepump
       state: 'cool'
-      #    - condition:
-        #      entity_id: weather.smhi_home
-        #      state: 'sunny'
+    - condition: state
+      entity_id: weather.smhi_home
+      state: 'sunny'
   action:
     - service: climate.set_fan_mode
       data:
