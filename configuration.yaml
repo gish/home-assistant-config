@@ -26,3 +26,6 @@ input_boolean:
   night_time_active:
     name: Time of day is night time
 
+adaptive_lighting:
+  lights:
+    - light.desk_1
