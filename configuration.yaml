@@ -27,5 +27,7 @@ input_boolean:
     name: Time of day is night time
 
 adaptive_lighting:
+- name: "Office desk"
   lights:
     - light.desk_1
+  max_brightness: 70
