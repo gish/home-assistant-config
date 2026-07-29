@@ -43,16 +43,12 @@
     before: "20:00:00"
   action:
     - service: scene.turn_on
-      entity_id: scene.common_lights_on
-    - service: scene.turn_on
-      entity_id: scene.outdoor_lights_on
-    - service: scene.turn_on
       entity_id: scene.kids_lights_on
 
 - alias: Turn off the kids' lights at late
   trigger:
     platform: time
-    at: "20:00:00"
+    at: "20:30:00"
   action:
     - service: scene.turn_on
       entity_id: scene.kids_lights_off
@@ -73,3 +69,18 @@
     - service: switch.turn_on
       target:
         entity_id: switch.on_off_light_12
+
+- alias: Turn on master bed light at late
+  trigger:
+    platform: time
+    at: "19:00:00"
+  action:
+    - service: light.turn_on
+      target: 
+        entity_id: light.extended_color_light_21
+      data:
+        brightness_pct: 23
+        rgb_color:
+          - 255
+          - 137
+          - 14
