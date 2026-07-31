@@ -61,15 +61,6 @@
     - service: scene.turn_on
       entity_id: scene.common_lights_off
 
-- alias: Turn on staircase in morning
-  trigger:
-    platform: time
-    at: "06:00:00"
-  action:
-    - service: switch.turn_on
-      target:
-        entity_id: switch.on_off_light_12
-
 - alias: Turn on master bed light at late
   trigger:
     platform: time
@@ -82,5 +73,14 @@
         brightness_pct: 23
         rgb_color:
           - 255
-          - 137
-          - 14
+          - 138
+          - 17
+
+- alias: Turn off master bed light at bed time
+  trigger:
+    platform: time
+    at: "22:00:00"
+  action:
+    - service: light.turn_off
+      target: 
+        entity_id: light.extended_color_light_21
