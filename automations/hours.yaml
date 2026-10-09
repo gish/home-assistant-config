@@ -1,73 +1,62 @@
 ###############################################################################
-## office hours
+## night time
 ###############################################################################
-- alias: 'Time of day in office hours state'
-  id: 'time of day in office hours state'
+- alias: 'Evening starts'
+  id: 'evening starts'
   trigger:
-    - platform: time
-      at: '08:00:00'
-      id: '08'
-  condition:
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
+    platform: sun
+    event: sunset
+    offset: "-00:30:00"
+  condition: and
+  conditions:
+     - condition: time
+       before: "21:00:00"
+     - condition: time
+       weekday:
+         - mon
+         - tue
+         - wed
+         - thu
+         - fri
+         - sat
+         - sun
   action:
     - service: input_boolean.turn_on
       target:
-        entity_id: input_boolean.office_hours_active
+        entity_id: input_boolean.common_lights
+    - service: input_boolean.turn_on
+      target:
+        entity_id: input_boolean.kids_lights
+    - service: input_boolean.turn_on
+      target:
+        entity_id: input_boolean.outdoor_lights
 
-- alias: 'Time of day outside office hours state'
-  id: 'time of day outside office hours state'
+- alias: 'Kids evening ends'
+  id: 'kids evening ends'
   trigger:
-    - platform: time
-      at: '16:00:00'
-      id: '16'
-  condition:
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
+    platform: time
+    at: "21:00:00"
   action:
     - service: input_boolean.turn_off
       target:
-        entity_id: input_boolean.office_hours_active
+        entity_id: input_boolean.kids_lights
 
-###############################################################################
-## night time
-###############################################################################
-- alias: 'Time of day night time'
-  id: 'time of day in night time'
+
+- alias: 'Evening ends'
+  id: 'evening ends'
   trigger:
-    - platform: time
-      at: '22:00:00'
-      id: '22'
-  condition:
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-      - sat
-      - sun
+    platform: time
+    at: "22:00:00"
   action:
-    - service: input_boolean.turn_on
+    - service: input_boolean.turn_off
       target:
-        entity_id: input_boolean.night_time_active
+        entity_id: input_boolean.common_lights
 
-- alias: 'Time of day not night time'
-  id: 'time of day not night time'
+- alias: 'Weekday morning start'
+  id: 'weekday morning starts'
   trigger:
     - platform: time
-      at: '06:00:00'
+      at: '06:20:00'
       id: '06'
   condition:
     condition: time
@@ -77,10 +66,47 @@
       - wed
       - thu
       - fri
+  action:
+    - service: input_boolean.turn_on
+      target:
+        entity_id: input_boolean.common_lights
+
+- alias: 'Weekend morning start'
+  id: 'weekend morning start'
+  trigger:
+    - platform: time
+      at: '07:20:00'
+      id: '06'
+  condition:
+    condition: time
+    weekday:
+      - sat
+      - sun
+  action:
+    - service: input_boolean.turn_on
+      target:
+        entity_id: input_boolean.common_lights
+
+- alias: 'Morning ends'
+  id: 'morning ends'
+  trigger:
+    platform: sun
+    event: sunrise
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
       - sat
       - sun
   action:
     - service: input_boolean.turn_off
       target:
-        entity_id: input_boolean.night_time_active
+        entity_id: input_boolean.common_lights
+    - service: input_boolean.turn_on
+      target:
+        entity_id: input_boolean.outdoor_lights
 

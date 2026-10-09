@@ -21,10 +21,12 @@ input_boolean:
     icon: mdi:bicycle-electric
   storage_temperature_too_low:
     name: Storage temperature too low
-  office_hours_active:
-    name: Time of day is office hours
-  night_time_active:
-    name: Time of day is night time
+  common_lights:
+    name: Common lights turned
+  kids_lights:
+    name: Kids lights turned
+  outdoor_lights:
+    name: Outdoor lights
 
 adaptive_lighting:
 - name: "Office desk"

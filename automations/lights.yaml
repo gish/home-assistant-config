@@ -1,37 +1,11 @@
-- alias: Turn on common lights in morning
+- alias: Turn on common lights 
   trigger:
-    platform: time
-    at: "06:15:00"
-  condition:
-    condition: sun
-    before: sunrise
+    platform: state
+    entity_id: input_boolean.common_lights
+    to: 'on'
   action:
     - service: scene.turn_on
       entity_id: scene.common_lights_on
-
-- alias: Turn off lights when the sun rises
-  trigger:
-    platform: sun
-    event: sunrise
-  action:
-    - service: scene.turn_on
-      entity_id: scene.outdoor_lights_off
-    - service: scene.turn_on
-      entity_id: scene.common_lights_off
-
-- alias: Turn on lights when the sun sets
-  trigger:
-    platform: sun
-    event: sunset
-    offset: "-00:30:00"
-  condition:
-    condition: time
-    before: "21:00:00"
-  action:
-    - service: scene.turn_on
-      entity_id: scene.common_lights_on
-    - service: scene.turn_on
-      entity_id: scene.outdoor_lights_on
     - service: light.turn_on
       target: 
         entity_id: light.extended_color_light_21
@@ -42,57 +16,50 @@
           - 138
           - 17
 
-- alias: Turn on kids light when the sun sets
+- alias: Turn off common lights 
   trigger:
-    platform: sun
-    event: sunset
-    offset: "-00:30:00"
-  condition:
-    condition: time
-    before: "20:00:00"
+    platform: state
+    entity_id: input_boolean.common_lights
+    to: 'off'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.common_lights_off
+    - service: light.turn_off
+      target: 
+        entity_id: light.extended_color_light_21
+        
+- alias: Turn on kids lights 
+  trigger:
+    platform: state
+    entity_id: input_boolean.kids_lights
+    to: 'on'
   action:
     - service: scene.turn_on
       entity_id: scene.kids_lights_on
 
-- alias: Turn off the kids' lights at late
+- alias: Turn off kids lights 
   trigger:
-    platform: time
-    at: "21:00:00"
+    platform: state
+    entity_id: input_boolean.kids_lights
+    to: 'off'
   action:
     - service: scene.turn_on
       entity_id: scene.kids_lights_off
 
-- alias: Turn off lights at bedtime
+- alias: Turn on outdoor lights 
   trigger:
-    platform: time
-    at: "23:00:00"
+    platform: state
+    entity_id: input_boolean.kids_lights
+    to: 'on'
   action:
     - service: scene.turn_on
-      entity_id: scene.common_lights_off
+      entity_id: scene.outdoor_lights_on
 
-- alias: Turn on master bed light at late
+- alias: Turn off outdoor lights 
   trigger:
-    platform: time
-    at: "19:00:00"
+    platform: state
+    entity_id: input_boolean.kids_lights
+    to: 'off'
   action:
-    - service: light.turn_on
-      target: 
-        entity_id: light.extended_color_light_21
-      data:
-        brightness_pct: 23
-        rgb_color:
-          - 255
-          - 138
-          - 17
-
-- alias: Turn off master bed light at bed time
-  trigger:
-    platform: time
-    at: "22:00:00"
-  action:
-    - service: light.turn_off
-      target:
-        entity_id: switch.master_bedroom
-    - service: light.turn_off
-      target: 
-        entity_id: light.extended_color_light_21
+    - service: scene.turn_on
+      entity_id: scene.outdoor_lights_off
