@@ -7,7 +7,6 @@
     platform: sun
     event: sunset
     offset: "-00:30:00"
-  condition: and
   conditions:
      - condition: time
        before: "21:00:00"
