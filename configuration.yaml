@@ -22,11 +22,11 @@ input_boolean:
   storage_temperature_too_low:
     name: Storage temperature too low
   common_lights:
-    name: Common lights turned
+    name: Common lights turned on
   kids_lights:
-    name: Kids lights turned
+    name: Kids lights turned on
   outdoor_lights:
-    name: Outdoor lights
+    name: Outdoor lights turned on
 
 adaptive_lighting:
 - name: "Office desk"
