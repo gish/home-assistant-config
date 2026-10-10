@@ -49,7 +49,7 @@
 - alias: Turn on outdoor lights 
   trigger:
     platform: state
-    entity_id: input_boolean.kids_lights
+    entity_id: input_boolean.outdoor_lights
     to: 'on'
   action:
     - service: scene.turn_on
@@ -58,7 +58,7 @@
 - alias: Turn off outdoor lights 
   trigger:
     platform: state
-    entity_id: input_boolean.kids_lights
+    entity_id: input_boolean.outdoor_lights
     to: 'off'
   action:
     - service: scene.turn_on
