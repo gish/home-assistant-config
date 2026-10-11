@@ -57,14 +57,19 @@
     - platform: time
       at: '06:20:00'
       id: '06'
+  conditions:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+    - condition: sun
+      before: sunrise
   condition:
     condition: time
     weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
   action:
     - service: input_boolean.turn_on
       target:
@@ -76,11 +81,13 @@
     - platform: time
       at: '07:20:00'
       id: '06'
-  condition:
-    condition: time
-    weekday:
-      - sat
-      - sun
+  conditions:
+    - condition: time
+      weekday:
+        - sat
+        - sun
+    - condition: sun
+      before: sunrise
   action:
     - service: input_boolean.turn_on
       target:
