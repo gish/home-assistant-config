@@ -67,9 +67,6 @@
         - fri
     - condition: sun
       before: sunrise
-  condition:
-    condition: time
-    weekday:
   action:
     - service: input_boolean.turn_on
       target:
