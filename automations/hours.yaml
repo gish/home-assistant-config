@@ -52,7 +52,7 @@
         entity_id: input_boolean.common_lights
 
 - alias: 'Weekday morning start'
-  id: 'weekday morning starts'
+  id: 'weekday morning start'
   trigger:
     - platform: time
       at: '06:20:00'
