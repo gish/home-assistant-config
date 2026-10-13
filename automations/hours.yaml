@@ -109,7 +109,7 @@
     - service: input_boolean.turn_off
       target:
         entity_id: input_boolean.common_lights
-    - service: input_boolean.turn_on
+    - service: input_boolean.turn_off
       target:
         entity_id: input_boolean.outdoor_lights
 
